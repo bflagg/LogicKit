@@ -14,15 +14,16 @@ let kb1: KnowledgeBase = [
     recipe("second", "white", "one", "two", "three", "two"),
     finalist("beth", "third"),
     finalist("ben", "first"),
-    finalist("betsy", "second")
-]
+    finalist("betsy", "second"),
 
-let kb2: KnowledgeBase = [
     .fact("mayo", .fact("one"), .fact("two"), .fact("three") ),
     .fact("onion", .fact("one"), .fact("two"), .fact("three") ),
     .fact("potato", .fact("white"), .fact("red"), .fact("gold") ),
     .fact("celery", .fact("one"), .fact("two"), .fact("three") ),
-    .fact("vinegar", .fact("two"), .fact("two"), .fact("six") )
+    .fact("vinegar", .fact("two"), .fact("two"), .fact("six") ),
+    .rule("winner", .var("x") ) {
+        .fact("finalist", .var("x"), "first")
+    }
 ]
 
 
